@@ -1,0 +1,159 @@
+<body>
+    <h1> HOW THE GRAPH DATASTRUCTURE WAS IMPLEMENTED TO BUILD THE ROUTE FINDER APPLICATION WITH JAVA
+ </h1>
+ In the Edge Class,
+ 
+ Class Declaration:
+ 
+ The class is declared  with the name Edge.
+ 
+ Instance Variables:
+ 
+ start: This variable represents the starting vertex of the edge.
+ 
+ end: This variable represents the ending vertex of the edge.
+ 
+ weight: This variable represents the weight or cost associated with traversing the edge. It's likely a Double value indicating the distance or some other metric.
+ 
+ Constructor:
+ 
+ The class has a constructor that takes three parameters: startV, endV, and inputWeight.
+ When an Edge object is instantiated, it initializes the start, end, and weight instance variables with the provided values.
+ 
+ Getter Methods:
+ 
+ The class provides getter methods for accessing the start, end, and weight instance variables.
+ 
+ These getter methods allow other classes to retrieve the values of these variables but don't provide any way to modify them directly (since there are no setter methods).
+ 
+ Overall, the Edge class  represent the edges of a graph, which are used to connect vertices and define relationships between them.
+ 
+ 
+ 
+ In the Vertex Class,
+ 
+ Class Declaration:
+ 
+ The class is declared  with the name Vertex.
+ 
+ Instance Variables:
+ 
+ data: 
+ This variable represents the data associated with the vertex. It's likely a name that describes the vertex.
+ 
+ edges:
+  This variable is an ArrayList of Edge objects. It stores the edges that are connected to this vertex.
+ 
+ Constructor:
+ 
+ The class has a constructor that takes a single parameter inputData, which initializes the data variable with the provided value.
+ 
+ It also initializes the edges ArrayList to an empty ArrayList.
+ 
+ Methods:
+ 
+ addEdge(Edge edge): 
+ This method adds an edge to the edges ArrayList.
+ 
+ removeEdge(Vertex endVertex): 
+ This method removes edges connected to the vertex where the end vertex matches the provided endVertex.
+ 
+ getData():
+  This method returns the data associated with the vertex.
+ 
+ getEdges():
+  This method returns the list of edges connected to the vertex.
+ 
+ print(boolean showWeight): 
+ This method prints out the vertex data along with the list of connected vertices (if any). If showWeight is true, it also shows the weight associated with each edge.
+ 
+ 
+ In the Graph Class,
+ 
+ Class Declaration:
+ 
+ The class is declared with the name Graph.
+ It includes imports for several Java utility classes such as ArrayList, HashMap, Map, and PriorityQueue.
+ 
+ Instance Variables:
+ 
+ vertices: This variable is an ArrayList that stores the vertices of the graph.
+ 
+ isWeighted: This boolean variable indicates whether the graph is weighted.
+ 
+ isDirected: This boolean variable indicates whether the graph is directed.
+ 
+ Constructor:
+ 
+ The class has a constructor that takes two boolean parameters inputIsWeighted and inputIsDirected.
+ 
+ It initializes the vertices list as an empty ArrayList and sets the isWeighted and isDirected flags based on the provided parameters.
+ 
+ Vertex and Edge Operations:
+ 
+ addVertex(String data): 
+ This method adds a new vertex to the graph with the given data and returns the newly created vertex.
+ 
+ addEdge(Vertex vertex1, Vertex vertex2, Double weight):
+  This method adds an edge between two vertices. If the graph is not weighted, the weight parameter is set to null.
+ 
+ removeEdge(Vertex vertex1, Vertex vertex2): 
+ This method removes the edge between two vertices.
+ 
+ removeVertex(Vertex vertex): This method removes a vertex from the graph.
+ 
+ Getter Methods:
+ 
+ getVertices(): 
+ This method returns the list of vertices in the graph.
+ 
+ isWeighted(): 
+ This method returns whether the graph is weighted.
+ 
+ isDirected(): This method returns whether the graph is directed.
+ getVertexByValue(String value): This method returns the vertex with the given data value.
+ 
+ Shortest Path Algorithm:
+ 
+ shortestPath(Vertex source, Vertex destination): 
+ This method implements Dijkstra's algorithm to find the shortest path between two vertices in the graph. It returns an ArrayList containing the vertices in the shortest path from the source to the destination.
+ 
+ Print Method:
+ 
+ print(): This method prints out the vertices and their connected edges, optionally showing edge weights if the graph is weighted.
+ 
+ 
+ 
+ 
+ In the Main Class,
+ 
+ Instance Variables:
+ 
+ weight: 
+ This instance variable is of type Double and is used to store the total weight of the shortest path. It seems to be declared as a public instance variable, which is not typical in Java.
+ 
+ getTotalWeight Method:
+ 
+ This method calculates the total weight of a given shortest path. It takes an ArrayList of vertices representing the shortest path as input and iterates over the vertices, accumulating the weights of the edges between consecutive vertices.
+ 
+ findEdge Method:
+ 
+ This method searches for an edge between two vertices. It takes two vertices (start and end) as input and searches for an edge connecting them in the graph.
+ 
+ graph Method:
+ 
+ This method constructs the graph representing a bus network on a university campus and finds the shortest path between two locations (s and e).
+ It creates vertices for various locations on the campus and adds edges between them, representing possible routes.
+ The method then calculates the shortest path between the source and destination vertices using Dijkstra's algorithm implemented in the shortestPath method of the Graph class.
+ It prints the shortest path and returns an ArrayList containing the vertices in the shortest path.
+ 
+ getW Method:
+ 
+ This method returns the total weight of the shortest path calculated by the graph method.
+ 
+ 
+ 
+ 
+ 
+ 
+ </body>

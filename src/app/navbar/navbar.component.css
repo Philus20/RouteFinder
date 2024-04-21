@@ -1,0 +1,12 @@
+@import '../../../src/css/bootstrap.css';
+/* @import '../../../src/css/font-awesome.min.css'; */
+@import '../../../src/css/responsive.css';
+@import '../../../src/css/style.css';
+/* @import '../../css/style.css.map'; */
+@import '../../css/style.scss';
+
+table,tr,td,th{
+    padding: 1rem;
+    border: 1px solid black;
+    margin: 2px;
+}
